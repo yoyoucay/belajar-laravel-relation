@@ -12,7 +12,14 @@ class UserController extends Controller
 {
     public function showProfile($id)
     {
-        return view('user.profile', ['user' => User::findOrFail($id)]);
+        // $user = User::with(['forums' => function($query){
+        //   $query->where('title', 'like', '%m%');
+        // }
+        //
+        // ])->where('id', $id)->first();
+
+        $user = User::with('forums.tags', 'lessons')->where('id', $id)->first();
+        return view('user.profile', ['user' => $user]);
     }
 
     public function showPassport($id)
