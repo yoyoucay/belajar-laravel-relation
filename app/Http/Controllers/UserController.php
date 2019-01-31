@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Passport;
+use App\Models\Lesson;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -16,5 +17,10 @@ class UserController extends Controller
     public function showPassport($id)
     {
         return view('user.passport', ['passport' => passport::findOrFail($id)]);
+    }
+
+    public function showLesson($id)
+    {
+        return view('user.lesson', ['lesson' => lesson::findOrFail($id)]);
     }
 }

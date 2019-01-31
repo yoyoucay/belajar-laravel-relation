@@ -3,5 +3,12 @@
 <h3>Daftar Forum</h3>
 
 @foreach($user->forums as $forum)
-<li>{{ $forum->title }}</li>  
+<li>{{ $forum->title }}</li>
+@endforeach
+
+
+<h3>Daftar Kelas</h3>
+
+@foreach($user->lessons as $lesson)
+<li>{{ $lesson->title }}</li>  
 @endforeach
