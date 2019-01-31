@@ -65,4 +65,19 @@ class UserController extends Controller
           'body' => 'Body test forum terbaru'
       ]);
     }
+
+    public function updateForum(){
+      $forum = Forum::find(2);
+      $user = User::find(1);
+
+      $forum->user()->associate($user);
+      $forum->save();
+    }
+
+    public function deleteForum(){
+      $forum = Forum::find(2);
+
+      $forum->user()->dissociate();
+      $forum->save();
+    }
 }
