@@ -18,6 +18,14 @@ class UserController extends Controller
         //
         // ])->where('id', $id)->first();
 
+        $forums = User::withCount('forums')->get();
+
+        //view
+        foreach ($forums as $forum) {
+          echo $forum->name . ' ' . $forum->forums_count . '<br>';
+        }
+
+        dd('Dor!');
         $user = User::with('forums.tags', 'lessons')->where('id', $id)->first();
         return view('user.profile', ['user' => $user]);
     }

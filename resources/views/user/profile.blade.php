@@ -2,6 +2,8 @@
 
 <h3>Daftar Forum</h3>
 
+
+
 @foreach($user->forums as $forum)
 <li>{{ $forum->title }}
   Tag :
