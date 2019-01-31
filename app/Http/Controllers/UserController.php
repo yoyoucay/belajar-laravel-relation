@@ -91,4 +91,20 @@ class UserController extends Controller
       $user = User::find(2);
       $user->lessons()->detach(2);
     }
+
+    public function updateLesson(){
+      $user = User::find(2);
+      $attribute = [
+        'data' => 'coto'
+      ];
+
+      $user->lessons()->updateExistingPivot(2, $attribute);
+    }
+
+    // Sync
+    public function syncLesson(){
+      $user = User::find(1);
+      $list = [1,2];
+      $user->lessons()->sync($list);
+    }
 }
