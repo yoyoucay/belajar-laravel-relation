@@ -107,4 +107,13 @@ class UserController extends Controller
       $list = [1,2];
       $user->lessons()->sync($list);
     }
+
+
+    // Mengupdate parent
+    public function editPassport()
+    {
+        $passport = Passport::find(1);
+        $passport->no_pass = 'lala12312';
+        $passport->save();
+    }
 }

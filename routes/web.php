@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('user/{id}', 'UserController@showProfile');
+
+Route::get('passport/edit', 'UserController@editPassport');
 Route::get('passport/{id}', 'UserController@showPassport');
 
 //many to many relations
