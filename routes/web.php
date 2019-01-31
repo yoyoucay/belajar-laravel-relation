@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('user/{id}', 'UserController@show');
+Route::get('user/{id}', 'UserController@showProfile');
+Route::get('passport/{id}', 'UserController@showPassport');
