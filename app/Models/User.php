@@ -13,4 +13,9 @@ class User extends Model
     {
         return $this->hasOne('App\Models\Passport');
     }
+
+    public function forums()
+    {
+        return  $this->hasMany('App\Models\Forum');
+    }
 }
