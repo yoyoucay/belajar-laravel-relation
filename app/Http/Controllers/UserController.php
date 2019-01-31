@@ -49,4 +49,20 @@ class UserController extends Controller
     {
         return view('user.forum', ['forum' => forum::findOrFail($id)]);
     }
+
+    public function createForum()
+    {
+      // $forum = new Forum([
+      //   'title' => 'Test Forum New',
+      //   'body' => 'Body test forum new'
+      // ]);
+
+      $user = User::find('2');
+
+      // $user->forums()->save($forum);
+      $user->forums()->create([
+          'title' => 'Test Forum terbaru',
+          'body' => 'Body test forum terbaru'
+      ]);
+    }
 }
