@@ -11,4 +11,9 @@ class Lesson extends Model
       return  $this->belongsToMany('App\Models\User')->withTimeStamps()
                     ->withPivot('data')->wherePivot('data', 'hmm');
   }
+
+  public function likes()
+  {
+      return  $this->morphMany('App\Models\Like', 'likeable');
+  }
 }
