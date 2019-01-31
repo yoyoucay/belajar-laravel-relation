@@ -80,4 +80,15 @@ class UserController extends Controller
       $forum->user()->dissociate();
       $forum->save();
     }
+
+    // many to many
+    public function createLesson(){
+      $user = User::find(2);
+      $user->lessons()->attach(2);
+    }
+
+    public function deleteLesson(){
+      $user = User::find(2);
+      $user->lessons()->detach(2);
+    }
 }

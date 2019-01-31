@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Route::get('user/{id}', 'UserController@showProfile');
 Route::get('passport/{id}', 'UserController@showPassport');
+
+//many to many relations
+Route::get('lesson/create', 'UserController@createLesson');
+Route::get('lesson/delete', 'UserController@deleteLesson');
 Route::get('lesson/{id}', 'UserController@showLesson');
 
 // Insert relation
