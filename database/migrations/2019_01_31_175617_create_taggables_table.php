@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLikesTable extends Migration
+class CreateTaggablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateLikesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Likes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('likeable_id');
-            $table->string('likeable_type', 100);
-            $table->timestamps();
+        Schema::create('taggables', function (Blueprint $table) {
+            $table->integer('tag_id');
+            $table->integer('taggable_id');
+            $table->string('taggable_type', 100);
         });
     }
 
@@ -28,6 +27,6 @@ class CreateLikesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Likes');
+        Schema::dropIfExists('taggables');
     }
 }
